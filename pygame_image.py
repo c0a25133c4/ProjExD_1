@@ -31,9 +31,10 @@ def main():
             kk_rct.move_ip((-1, 0)) # 横に-1動かす
 
         if key_lst[pg.K_RIGHT]: # 練習10-4：右矢印キーが押されたら
-            kk_rct.move_ip((1, 0)) # 横に1動かす
-        
+            kk_rct.move_ip((2, 0)) # 横に1動かす
+
         x = tmr % 3200 # 練習5：背景画像移動用の変数　/ 練習9
+        kk_rct.move_ip((-1, 0))
         screen.blit(bg_img, [-x, 0]) # 練習2
         screen.blit(bg_img_fliped, [-x+1600, 0]) # 練習7
         screen.blit(bg_img, [-x+3200, 0]) # 練習9
