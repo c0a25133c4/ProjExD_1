@@ -21,17 +21,30 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed() # 練習10-3：全キーの状態の取得
+        i = 0
+        j = 0
+
         if key_lst[pg.K_UP]: # 練習10-4：上矢印キーが押されたら
-            kk_rct.move_ip((0, -1)) # 縦に-1動かす
+            i = 0
+            j = -1
+            # kk_rct.move_ip((0, -1)) # 縦に-1動かす
 
         if key_lst[pg.K_DOWN]: # 練習10-4：下矢印キーが押されたら
-            kk_rct.move_ip((0, 1)) # 縦に1動かす
+            i = 0
+            j = 1
+            # kk_rct.move_ip((0, 1)) # 縦に1動かす
 
         if key_lst[pg.K_LEFT]: # 練習10-4：左矢印キーが押されたら
-            kk_rct.move_ip((-1, 0)) # 横に-1動かす
+            i = -1
+            j = 0
+            # kk_rct.move_ip((-1, 0)) # 横に-1動かす
 
         if key_lst[pg.K_RIGHT]: # 練習10-4：右矢印キーが押されたら
-            kk_rct.move_ip((2, 0)) # 横に1動かす
+            i = 2
+            j = 0
+            # kk_rct.move_ip((2, 0)) # 横に1動かす
+        
+        kk_rct.move_ip((i, j))
 
         x = tmr % 3200 # 練習5：背景画像移動用の変数　/ 練習9
         kk_rct.move_ip((-1, 0))
